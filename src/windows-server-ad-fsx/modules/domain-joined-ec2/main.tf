@@ -57,7 +57,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_ssm_document" "ad-join-domain" {
-  name          = "ad-join-domain"
+  name          = "${var.name}-ad-join-domain"
   document_type = "Command"
   content = jsonencode(
     {
